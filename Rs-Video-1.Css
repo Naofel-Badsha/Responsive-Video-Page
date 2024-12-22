@@ -1,0 +1,796 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+}
+
+:root{
+    --clay: #11b8b8;
+    --orange:#ffa500;
+}
+
+
+*::selection{
+    background: var(--clay);
+    color: #fff;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+/*-------------------------------*/
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+.heading span{
+    font-size: 3.5rem;
+    font-family: sans-serif;
+    background: (255, 165, 0,.2);
+    color: var(--clay);
+    border-radius: 5rem;
+    padding: .2rem 1rem;
+}
+.heading span.space{
+    background: var(--orange);
+}
+/*-------------------------------*/
+html{
+    font-size: 62.5%;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--clay);
+    color: #fff;
+    padding: .8rem 3rem;
+    border: .1rem solid #ff004f;
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+}
+
+.btn:hover{
+    letter-spacing: 1px;
+    background: none;
+    color: #ff004f;
+}
+
+
+/*-------Header------Start--------*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #7a7373;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+header .logo{
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+header .logo i{
+    color: #11b8b8;
+    font-size: 3rem;
+}
+
+header .logo span{
+    color: var(--orange);
+}
+
+header .navbar a{
+   color: #fff;
+   font-size: 2rem;
+   font-family: sans-serif;
+   font-weight: 500;
+   margin: 0.8rem;
+   text-decoration: none;
+}
+
+header .navbar a:hover{
+    color: var(--clay);
+}
+
+header .icons i{
+   font-size: 2.5rem;
+   color: #fff;
+   cursor: pointer;
+   margin-right: 2rem;
+}
+
+header .icons i:hover{
+    color: var(--clay);
+}
+
+header .search-bar-container{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 2rem;
+    background: #7a7373;
+    border-top: .1rem solid #ff004f;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header .search-bar-container.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .search-bar-container #search-bar{
+     width: 100%;
+     padding: 1rem;
+     color: #ff004f;
+     font-size: 1.7rem;
+     font-family: sans-serif;
+     border-radius: .5rem;
+}
+
+header .search-bar-container label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+
+header .search-bar-container label:hover{
+    color: var(--clay);
+}
+
+#memu-bar{
+    color: #fff;
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem .5rem;
+    cursor: pointer;
+    display: none;
+}
+/*-------Header--f----End--------*/
+
+
+
+/*-------Login------Form------Start--------*/
+.login-form-container{
+    position: fixed;
+    top: 0;
+    left: -120%;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10000;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-container.active{
+    left: 0;
+}
+
+.login-form-container form{
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    width: 50rem;
+}
+
+.login-form-container form h3{
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: #444;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.login-form-container form .box{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #444;
+    margin: .6rem 0;
+    border: .2rem solid var(--clay);
+    border-radius: .5rem;
+} 
+
+.login-form-container form .box:focus{
+    border-color:  #ff004f;
+    box-shadow: 3px 3px 5px var(--orange);
+}
+
+.login-form-container form #remember{
+    margin: 2rem 0; 
+}
+
+.login-form-container form label{
+    font-size: 1.5rem;
+}
+
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+}
+
+.login-form-container form p{
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    color: #444;
+}
+
+.login-form-container form p a{
+    text-decoration: none;
+    color: #11b8b8;
+}
+
+.login-form-container form p a:hover{
+    text-decoration: underline;
+    color: #ff004f;
+    letter-spacing: 1px;
+}
+
+.login-form-container #from-close{
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    right: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+/*-------Login------Form------End--------*/
+
+
+
+
+/*-------Home------Section------Start--------*/
+.Home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+.Home .content{
+    text-align: center; 
+}
+
+.Home .content h3{
+    font-family: sans-serif;
+    color: #ff004f;
+    font-weight: 600;
+    font-size: 5.5rem;
+    text-shadow: 0.3rem .5rem rgba(0,0,0,.1);
+}
+
+.Home .content p{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.Home .content .btn{
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+/*-------Video---backgroun---Start----------*/
+.Home .video-container video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*-------Video---backgroun---End----------*/
+/*----------Home----------Section---------End-----------*/
+
+
+
+
+
+
+/*----------Book----------Section---------Start-----------*/
+.Book .row{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2.5rem;
+}
+
+.Book .row .images{
+    flex: 1 1 60rem;
+}
+
+.Book .row .images img{
+    width: 100%;
+}
+
+.Book .row form{
+    flex: 1 1 60px;
+    padding: 3rem;
+    box-shadow: 0 1rem 2rem #11b8b8;
+    border-radius: 2rem;
+}
+
+.Book .row form .inputBox{
+    padding: .5rem 0;
+    width: 100%;
+}
+
+.Book .row form .inputBox input{
+    width: 100%;
+    padding: 1.3rem;
+    border: .1rem solid #ff004f;
+    font-size: 1.7rem;
+    color: #ff004f;
+    text-transform: none;
+    border-radius: 0.5rem;
+}
+
+.Book .row form .inputBox input:focus{
+    border: 1px solid #11b8b8;
+    box-shadow: 2px 2px 4px #ff004f;
+}
+
+.Book .row form .inputBox h3{
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--clay);
+    padding: .5rem;
+}
+/*----------Book----------Section---------End-----------*/
+
+
+
+
+/*----------Pacages----------Section---------Start-----------*/
+.pakages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.pakages .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 1rem #b0516f;
+}
+
+.pakages .box-container .box img{
+   height: 25rem;
+   width: 100%;
+   object-fit: cover;
+}
+
+.pakages .box-container .box .content{
+    padding: 2rem;
+}
+
+.pakages .box-container .box .content h3{
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+}
+
+.pakages .box-container .box .content h3 i{
+    font-size: 3rem;
+    color: #11b8b8;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.pakages .box-container .box .content p{
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-style: italic;
+    color: var(--clay);
+    margin: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pakages .box-container .box .content .stars{
+  margin-left: 65px;
+}
+
+.pakages .box-container .box .content .stars i{
+    font-size: 2rem;
+    color: #ff004f;
+    margin: .3rem;
+}
+
+.pakages .box-container .box .content .prics{
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding: .5rem;
+    margin-left: 65px;
+}
+
+.pakages .box-container .box .content .prics span{
+    color: #ffa500;
+}
+
+.pakages .box-container .box .content a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-left: 65px;
+}
+/*----------Pacages----------Section---------End-----------*/
+
+
+
+
+
+
+/*----------Services----------Section---------Start-----------*/
+.Services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.Services .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.Services .box-container .box i{
+    padding: 1rem;
+    font-size: 5rem;
+    color: var(--clay);
+}
+
+.Services .box-container .box h3{
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: #ff004f;
+}
+
+.Services .box-container .box p{
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: #11b8b8;
+    padding: 1rem 0;
+}
+
+.Services .box-container .box{
+    box-shadow: 0 1rem 2rem #11b8b8;
+}
+
+.Services .box-container .box:hover{
+    background: pink;
+    box-shadow: none;
+}
+/*----------Services----------Section---------End-----------*/
+
+
+
+
+/*----------Gallery----------Section---------Start-----------*/
+.Gallery .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.Gallery .box-container .box{
+    overflow: hidden;
+    box-shadow: 0 1rem 1rem #11b8b8;
+    border: .5rem solid #ff004f;
+    border-radius: .5rem;
+    flex: 1 1 30rem;
+    height: 25rem;
+    position: relative;
+}
+
+.Gallery .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Gallery .box-container .box .content{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background:  rgba(0,0,0,.5);
+    padding: 2rem;
+    padding: 5rem;
+}
+
+.Gallery .box-container .box:hover .content{
+    top: 0;
+}
+
+.Gallery .box-container .box .content h3{
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: var(--clay);
+}
+
+.Gallery .box-container .box .content p{
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: #fff;
+    padding: .5rem;
+}
+
+.Gallery .box-container .box .content a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+/*----------Gallary----------Section---------End-----------*/
+
+
+
+
+
+/*----------Review----------Section---------Start-----------*/
+.Review .review-slider{
+    padding-bottom: 2rem;
+}
+
+.Review .box{
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.Review .box img{
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.Review .box h3{
+    color: #000;
+    font-size: 2.5rem;
+    font-family: sans-serif;
+}
+
+.Review .box p{
+    color: #7a7373;
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding: 1rem 0;
+}
+
+.Review .box .stars i{
+    color: var(--clay);
+    font-size: 2.5rem;
+}
+/*----------Review----------Section---------End-----------*/
+
+
+
+
+/*----------Contact----------Section---------Start-----------*/
+.Contact .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.Contact .row .image{
+    flex: 1 1 35rem;
+}
+
+.Contact .row .image img{
+    width: 100%;
+}
+
+.Contact .row  form{
+    flex: 1 1 50rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.Contact .row  form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Contact .row  form .inputBox input, 
+.Contact .row  form textarea{
+    width: 49%;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: #11b8b8;
+    background: #eccfcf;
+    border-radius: .5rem;
+}
+
+.Contact .row  form .inputBox input:focus{
+    box-shadow: 2px 2px 4px #11b8b8;
+}
+.Contact .row  form textarea:focus{
+    box-shadow: 2px 2px 4px #11b8b8;
+}
+
+.Contact .row  form textarea{
+    height: 15rem;
+    width: 100%;
+}
+/*----------Contact----------Section---------End-----------*/
+
+
+
+/*----------Footer----------Section---------Start-----------*/
+.footer{
+    background: #7a7373;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+
+.footer .box-container .box{
+    padding: 1rem 0;
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+   font-size: 2.5rem;
+   font-family: sans-serif;
+   padding: .7rem 0;
+   color: #fff;
+}
+
+.footer .box-container .box p{
+    font-size: 1.7rem;
+    font-family: sans-serif;
+    padding: .7rem 0;
+    color: #fff;
+ }
+
+ 
+.footer .box-container .box a{
+    display: block;
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding: .7rem 0;
+    color: #fff;
+    text-decoration: none;
+ }
+
+ .footer .box-container .box a:hover{
+    transform: translateX(10px);
+    color: #11b8b8;
+    text-decoration: underline;
+ }
+
+ .footer .box-container .box i{
+    font-size: 3rem;
+    margin: .5rem;
+    margin-top: 1rem;
+    color: #11b8b8;
+ }
+
+ .footer .box-container .box i:hover{
+    transform: translateY(-10px);
+    color: #ff004f;
+    cursor: pointer;
+ }
+
+ .footer .cradit{
+    text-align: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: #11b8b8;
+    padding: 4rem;
+ }
+
+ .footer .cradit span{
+    color: #7fff00;
+ }
+ 
+ .footer .cradit i{
+    color: #ff004f;
+    font-size: 4rem;
+ }
+ /*----------Footer----------Section---------End-----------*/
+ 
+ /*------Responsive-----Nav----Bar----And------Home-------Start-----*/
+@media screen and (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media screen and (max-width:991px){
+
+    header{
+        padding: 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width:770px){
+    #memu-bar{
+        display: initial;
+      }
+
+      .fa-times{
+        transform: rotate(360deg);
+      }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #444;
+        border-top: 1px solid #ff004f;
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+    }
+
+
+    header .navbar a{
+       display: block;
+       border-radius: .5rem;
+       padding: 1.5rem;
+       margin: 1.5rem 0;
+       background: #222;
+       border: 1px solid #11b8b8;
+       text-align: center;
+    }
+    
+}
+
+/*------Responsive-----Nav----Bar----And------Home-------End-----*/
+
+
